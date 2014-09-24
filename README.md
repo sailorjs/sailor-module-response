@@ -13,6 +13,6 @@
 npm install sailor-module-response
 ```
 
+## License
+
 MIT © sailorjs
-
-
