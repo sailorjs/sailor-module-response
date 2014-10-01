@@ -1,37 +1,19 @@
 {
   "name": "sailor-module-response",
   "description": "HTTP Status Codes for your Application",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Kiko Beats",
     "email": "josefrancisco.verdu@gmail.com",
     "url": "https://github.com/Kikobeats"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "coffee-script": "*",
-    "grunt": "*",
-    "grunt-contrib-watch": "*",
-    "load-grunt-tasks": "*",
-    "mocha": "*",
-    "should": "*",
-    "superagent": "*",
-    "sailor-scripts": "git://github.com/sailorjs/sailor-scripts",
-    "grunt-translate-compile": "git://github.com/sailorjs/translate-compile"
-  },
-  "engines": {},
-  "homepage": "",
   "keywords": [
     "sailor",
     "module"
   ],
   "license": "MIT",
-  "main": "",
   "repository" : {
     "type" : "git",
     "url"  : "http://github.com/sailorjs/sailor-module-response.git"
-  },
-  "scripts": {
-    "test": "sh test/test.sh"
   }
 }
