@@ -9,7 +9,10 @@
   },
   "keywords": [
     "sailor",
-    "module"
+    "module",
+    "response",
+    "status",
+    "http"
   ],
   "license": "MIT",
   "repository" : {
