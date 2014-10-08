@@ -1,7 +1,7 @@
 {
   "name": "sailor-module-response",
   "description": "HTTP Status Codes for your Application",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "author": {
     "name": "Kiko Beats",
     "email": "josefrancisco.verdu@gmail.com",

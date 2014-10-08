@@ -12,6 +12,22 @@
 npm install sailor-module-response
 ```
 
+## API
+
+| Code Status    	| Function                              | 
+| -----------------	|:-------------------------------------:| 
+| 200 OK         	| res.ok([data], [options])             |
+| 201 created    	| res.created([data], [options])        | 
+| 400 badRequest   	| res.badRequest([data], [options])     | 
+| 401 unauthorized 	| res.unauthorized([data], [options])   |
+| 403 forbidden  	| res.forbidden([data], [options])      | 
+| 404 notFound  	| res.notFound([data], [options])       | 
+| 405 unsupported  	| res.unsupported([data], [options])    | 
+| 422 unprocessable	| res.unprocessable([data], [options])  | 
+| 500 serverError  	| res.serverError([data], [options])    | 
+
+
+
 ## License
 
 MIT © sailorjs
