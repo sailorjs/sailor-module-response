@@ -1,14 +1,14 @@
 ###
-401 (Unauthorized) Handler
+429 (tooMany) Handler
 
 Usage:
-return res.unauthorized();
-return res.unauthorized(data);
-return res.unauthorized(data, 'some/specific/unauthorized/view');
+return res.tooMany();
+return res.tooMany(data);
+return res.tooMany(data, 'some/specific/tooMany/view');
 
 e.g.:
 ```
-return res.unauthorized(
+return res.tooMany(
 'Please choose a valid `password` (6-12 characters)',
 'trial/signup'
 );
@@ -22,13 +22,13 @@ module.exports = (data, options) ->
   sails = req._sails
 
   # Set status code
-  res.status 401
+  res.status 429
 
   # Log error to console
   if data isnt `undefined`
-    sails.log.verbose "Sending 401 (\"Unauthorized\") response: \n", data
+    sails.log.verbose "Sending 429 (\"Too Many Request\") response: \n", data
   else
-    sails.log.verbose "Sending 401 (\"Unauthorized\") response"
+    sails.log.verbose "Sending 429 (\"Too Many Request\") response"
 
   # Only include errors in response if application environment
   # is not set to 'production'.  In production, we shouldn't

@@ -14,11 +14,11 @@ return res.invalid(
 );
 ```
 ###
-module.exports = invalid = (data, options) ->
+module.exports = (data, options) ->
 
   # Get access to `req`, `res`, & `sails`
-  req = @req
-  res = @res
+  req   = @req
+  res   = @res
   sails = req._sails
 
   # Set status code

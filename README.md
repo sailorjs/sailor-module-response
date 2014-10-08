@@ -14,19 +14,19 @@ npm install sailor-module-response
 
 ## API
 
-| Code Status    	| Function                              | 
-| -----------------	|:-------------------------------------:| 
-| 200 OK         	| res.ok([data], [options])             |
-| 201 created    	| res.created([data], [options])        | 
-| 400 badRequest   	| res.badRequest([data], [options])     | 
-| 401 unauthorized 	| res.unauthorized([data], [options])   |
-| 403 forbidden  	| res.forbidden([data], [options])      | 
-| 404 notFound  	| res.notFound([data], [options])       | 
-| 405 unsupported  	| res.unsupported([data], [options])    | 
-| 422 unprocessable	| res.unprocessable([data], [options])  | 
-| 500 serverError  	| res.serverError([data], [options])    | 
-
-
+| Code Status    	 	| Function                              | 
+| ---------------------	|:-------------------------------------:| 
+| 200 OK         	 	| res.ok([data], [options])             |
+| 201 created    	 	| res.created([data], [options])        | 
+| 204 noContent    	 	| res.noContent([data], [options])      |
+| 304 notModified  	 	| res.notModified([data], [options])    | 
+| 400 badRequest   	 	| res.badRequest([data], [options])     | 
+| 401 unauthorized 	 	| res.unauthorized([data], [options])   |
+| 403 forbidden  	 	| res.forbidden([data], [options])      | 
+| 404 notFound  	 	| res.notFound([data], [options])       | 
+| 409 conflict  	 	| res.conflict([data], [options])       |
+| 429 tooManyRequest	| res.tooMany([data], [options])        |
+| 500 serverError  	 	| res.serverError([data], [options])    | 
 
 ## License
 

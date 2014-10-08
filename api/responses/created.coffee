@@ -10,11 +10,11 @@ return res.created(data, 'auth/login');
 @param  {String|Object} options
 - pass string to render specified view
 ###
-module.exports = sendCreated = (data, options) ->
+module.exports = (data, options) ->
 
   # Get access to `req`, `res`, & `sails`
-  req = @req
-  res = @res
+  req   = @req
+  res   = @res
   sails = req._sails
   sails.log.silly "res.created() :: Sending 201 (\"Created\") response"
 
@@ -35,7 +35,6 @@ module.exports = sendCreated = (data, options) ->
     res.view options.view,
       data: data
 
-
   # If no second argument provided, try to serve the implied view,
   # but fall back to sending JSON(P) if no view can be inferred.
   else
@@ -43,4 +42,3 @@ module.exports = sendCreated = (data, options) ->
       data: data
     , couldNotGuessView = ->
       res.jsonx data
-

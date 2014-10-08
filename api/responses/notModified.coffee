@@ -1,18 +1,14 @@
 ###
-401 (Unauthorized) Handler
+304 (notModified) Response
 
 Usage:
-return res.unauthorized();
-return res.unauthorized(data);
-return res.unauthorized(data, 'some/specific/unauthorized/view');
+return res.notModified();
+return res.notModified(data);
+return res.notModified(data, 'auth/login');
 
-e.g.:
-```
-return res.unauthorized(
-'Please choose a valid `password` (6-12 characters)',
-'trial/signup'
-);
-```
+@param  {Object} data
+@param  {String|Object} options
+- pass string to render specified view
 ###
 module.exports = (data, options) ->
 
@@ -20,22 +16,12 @@ module.exports = (data, options) ->
   req   = @req
   res   = @res
   sails = req._sails
+  sails.log.silly "res.notModified() :: Sending 304 (\"Not Modified\") response"
 
   # Set status code
-  res.status 401
+  res.status 304
 
-  # Log error to console
-  if data isnt `undefined`
-    sails.log.verbose "Sending 401 (\"Unauthorized\") response: \n", data
-  else
-    sails.log.verbose "Sending 401 (\"Unauthorized\") response"
-
-  # Only include errors in response if application environment
-  # is not set to 'production'.  In production, we shouldn't
-  # send back any identifying information about errors.
-  data = `undefined`  if sails.config.environment is "production"
-
-  # If the user-agent wants JSON, always respond with JSON
+  # If appropriate, serve data as JSON(P)
   return res.jsonx(data)  if req.wantsJSON
 
   # If second argument is a string, we take that to mean it refers to a view.

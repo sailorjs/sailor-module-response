@@ -1,34 +1,34 @@
 ###
-405 (Unsupported Action) Handler
+409 (conflict) Handler
 
 Usage:
-return res.unsupportedAction();
-return res.unsupportedAction(data);
-return res.unsupportedAction(data, 'some/specific/unsupportedAction/view');
+return res.conflict();
+return res.conflict(data);
+return res.conflict(data, 'some/specific/conflict/view');
 
 e.g.:
 ```
-return res.unsupportedAction(
+return res.conflict(
 'Please choose a valid `password` (6-12 characters)',
 'trial/signup'
 );
 ```
 ###
-module.exports = unsupportedAction = (data, options) ->
+module.exports = (data, options) ->
 
   # Get access to `req`, `res`, & `sails`
-  req = @req
-  res = @res
+  req   = @req
+  res   = @res
   sails = req._sails
 
   # Set status code
-  res.status 405
+  res.status 409
 
   # Log error to console
   if data isnt `undefined`
-    sails.log.verbose "Sending 405 (\"Unsupported Action\") response: \n", data
+    sails.log.verbose "Sending 409 (\"Conflict\") response: \n", data
   else
-    sails.log.verbose "Sending 405 (\"Unsupported Action\") response"
+    sails.log.verbose "Sending 409 (\"Conflict\") response"
 
   # Only include errors in response if application environment
   # is not set to 'production'.  In production, we shouldn't
@@ -49,7 +49,6 @@ module.exports = unsupportedAction = (data, options) ->
     res.view options.view,
       data: data
 
-
   # If no second argument provided, try to serve the implied view,
   # but fall back to sending JSON(P) if no view can be inferred.
   else
@@ -57,4 +56,3 @@ module.exports = unsupportedAction = (data, options) ->
       data: data
     , couldNotGuessView = ->
       res.jsonx data
-
