@@ -24,6 +24,7 @@ npm install sailor-module-response
 | 401 unauthorized 	 	| res.unauthorized([data], [options])   |
 | 403 forbidden  	 	| res.forbidden([data], [options])      | 
 | 404 notFound  	 	| res.notFound([data], [options])       | 
+| 405 notSupported 	 	| res.notSupported([data], [options])   | 
 | 409 conflict  	 	| res.conflict([data], [options])       |
 | 429 tooManyRequest	| res.tooMany([data], [options])        |
 | 500 serverError  	 	| res.serverError([data], [options])    | 
